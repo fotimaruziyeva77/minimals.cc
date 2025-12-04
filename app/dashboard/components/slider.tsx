@@ -10,7 +10,7 @@ const heroSlides = [
     name: 'Jaydon Frankie',
     text:
       "If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything.",
-    image: '/banner-3d.png', // 3D character rasm
+    image: '/assets/cover1.png', // 3D character rasm
   },
 ]
 
@@ -34,49 +34,51 @@ export default function DashboardTopSection() {
     <div className="grid grid-cols-1 xl:grid-cols-[2fr_1fr] gap-6">
 
       {/* ================= HERO SLIDER ================= */}
-      <div
-        className="
-          relative h-[280px]
-          rounded-2xl overflow-hidden
-          p-10 flex items-center
-          bg-gradient-to-r from-[#0f172a] to-[#020617]
-          text-white
-        "
-      >
-        {/* TEXT */}
-        <div className="max-w-md space-y-2 z-10">
-          <h2 className="text-2xl font-bold">
-            {hero.title}
-          </h2>
+      <div className="relative h-[280px] rounded-2xl overflow-hidden">
+  
+ 
+  <div
+    className="
+      absolute inset-0 
+      bg-[url('/assets/background-5.webp')] 
+      bg-cover bg-center
+    "
+  />
 
-          <h3 className="text-3xl font-bold">
-            {hero.name}
-          </h3>
+  {/* GRADIENT OVERLAY */}
+  <div
+    className="
+      absolute inset-0 
+      bg-linear-to-r from-[#0f172a]/60 to-[#020617]/80
+    "
+  />
 
-          <p className="text-sm text-slate-300 leading-relaxed">
-            {hero.text}
-          </p>
+  {/* CONTENT */}
+  <div className="relative z-10 p-10 flex items-center h-full text-white">
+    <div className="max-w-md space-y-2">
+      <h2 className="text-2xl font-bold">{hero.title}</h2>
 
-          <button className="mt-4 bg-emerald-500 hover:bg-emerald-600 px-6 py-2 rounded-lg text-white font-medium">
-            Go now
-          </button>
-        </div>
+      <h3 className="text-3xl font-bold">{hero.name}</h3>
 
-        {/* IMAGE */}
-        <Image
-          src={hero.image}
-          className="
-            absolute right-8 bottom-0
-            h-[260px] object-contain
-            hidden md:block
-          "
-					alt='hello'
-					width={600}
-					height={400}
-        />
-      </div>
+      <p className="text-sm text-slate-300 leading-relaxed">
+        {hero.text}
+      </p>
 
-      {/* ================= FEATURED SLIDER ================= */}
+      <button className="mt-4 bg-emerald-500 hover:bg-emerald-600 px-6 py-2 rounded-lg text-white font-medium">
+        Go now
+      </button>
+    </div>
+
+    {/* GIRL IMAGE */}
+    <Image
+      src={hero.image}
+      alt="girl"
+      width={360}
+      height={360}
+      className="absolute right-8 bottom-0 hidden md:block z-10"
+    />
+  </div>
+</div>
       <div
         className="relative h-[280px] rounded-2xl overflow-hidden"
         style={{
