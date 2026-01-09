@@ -10,6 +10,7 @@ import {
   Menu,
   X
 } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -21,7 +22,7 @@ interface SidebarProps {
 const menuItems = [
   {
     icon: Home,
-    label: 'Dashboard',
+    label: 'App',
     href: '/dashboard',
   },
   {
@@ -74,9 +75,9 @@ export default function Sidebar({ collapsed, width }: SidebarProps) {
 
         {/* LOGO */}
         <div className="h-16 border-b flex items-center px-4 gap-2">
-          <div className="w-8 h-8 rounded bg-indigo-500" />
+          <Image src={'/assets/logo.svg'} alt='hi' width={300} height={300} className='w-18 h-18 '/>
           {!collapsed && (
-            <span className="font-bold text-lg">Dashboard</span>
+            <span className="font-bold text-lg"></span>
           )}
         </div>
 
